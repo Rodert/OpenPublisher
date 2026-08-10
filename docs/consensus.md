@@ -61,6 +61,10 @@ CSDN 已完成第一轮浏览器流程验证：首次点击“保存草稿”才
 
 SegmentFault 已完成浏览器发布验证。已登录会话从首页“撰写”进入 CodeMirror Markdown 编辑器；正文图片通过 `.icon-image` 打开“添加图片”，本地上传后写入相对 Markdown 地址 `/img/<image-id>`，公开页解析为 `https://segmentfault.com/img/<image-id>` 并已确认渲染。平台最多五个标签，未观察到独立分类或摘要字段；成功发布直接跳转至 `https://segmentfault.com/a/<article-id>`。详细记录见 [SegmentFault Browser Discovery](platforms/segmentfault-discovery.md)，平台规则见 [SegmentFault Skill](../skills/platforms/segmentfault/SKILL.md)。
 
+## OSCHINA Discovery
+
+开源中国已完成浏览器发布验证。已登录会话从头像菜单的“发布博客/智写”进入默认 Markdown 编辑器；正文图片需先打开“插入图片”菜单，再选择“上传本地图片”，平台写入 `oscimg.oschina.net` 托管 Markdown 地址并在公开页成功渲染。发布配置使用原创来源、AI 博客分类和公开可见性；未观察到独立的手动标签或摘要字段。成功发布跳转至 `https://my.oschina.net/u/<user-id>/blog/<article-id>`。详细记录见 [OSCHINA Browser Discovery](platforms/oschina-discovery.md)，平台规则见 [OSCHINA Skill](../skills/platforms/oschina/SKILL.md)。
+
 ## 当前非目标
 
 暂不实现真实平台 API、浏览器自动登录、复杂前端、定时任务和多用户权限。这些将在核心流程跑通后逐项增加。
