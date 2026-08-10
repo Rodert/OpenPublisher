@@ -25,6 +25,8 @@ Browser mode only. The adapter must use a logged-in local browser session and mu
 
 ## Image Upload
 
+All CSDN test-publish runs must satisfy the global mandatory image-upload rule before final publication.
+
 1. Open the editor toolbar action labelled `图片`.
 2. In the `Insert image` dialog, select the `上传图片` tab and choose a local image.
 3. CSDN uploads the asset and inserts Markdown in the editor using this form:

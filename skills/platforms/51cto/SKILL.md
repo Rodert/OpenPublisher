@@ -19,7 +19,7 @@ Do not publish before this check. A sign-in result is operational metadata only 
 3. Validate the normalized article, including the mandatory author footer and reader-facing content boundary.
 4. Fill the title and body. When 51CTO detects pasted Markdown, choose **确认** to convert it to rich text.
 5. Wait for the editor to show an automatic-save timestamp. Treat this as a saved draft even when the URL and hidden fields do not expose a public article ID.
-6. Upload local images through the editor or cover uploader, wait for the hosted image to render, then wait for another automatic save.
+6. Upload at least one approved local image through the editor, wait for its hosted URL and rendered image, then wait for another automatic save. This is mandatory for every 51CTO test-publish run; automatic cover selection alone is insufficient.
 7. Open **发布文章** and set all required publication fields.
 8. Present the final reader-facing article and selected settings for explicit per-article approval.
 9. In a newly created editor, click the final **发布** button only after approval; then capture the result URL and status. Do not treat a draft editor's **确认** button as successful publication.

@@ -25,3 +25,14 @@ At minimum, the following text is prohibited in titles, summaries, bodies, image
 ## Mandatory Author Footer
 
 Every published article must end with the configured author profile. The publishing pipeline appends it before centralized validation; platform-specific transformations must preserve it and must not duplicate it.
+
+## Mandatory Image Upload In Test Runs
+
+Every platform test-publish workflow must complete a real image upload before final publication. This is mandatory even when the platform supports automatic cover selection.
+
+1. Upload at least one approved local image to the platform's article editor or media service.
+2. Confirm the platform returned a hosted image URL and that the image is rendered in the editor or preview.
+3. Save the draft after insertion, then verify the hosted image remains associated with the saved article.
+4. Record the sanitized hosted URL in the publication result.
+
+An automatic cover option does not satisfy this rule unless the uploaded image is already present in the article. A platform Skill may require additional image or cover checks, but may never omit this test-run requirement.
