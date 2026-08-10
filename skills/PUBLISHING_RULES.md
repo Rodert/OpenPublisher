@@ -40,3 +40,7 @@ An automatic cover option does not satisfy this rule unless the uploaded image i
 ## Login Handoff
 
 When a platform requires authentication, open that platform's actual login page and retain it as a browser handoff. Resume the same platform workflow only after the user completes login. Do not stop at a homepage, request browser cookies, or expose credentials in chat, logs, articles, or Git.
+
+## CAPTCHA And Verification Handoff
+
+When a CAPTCHA, human-verification check, or secondary authentication appears, immediately stop the blocked action and retain the current browser page as the user's handoff. Preserve the article form, selected settings, and already uploaded assets; resume from that same page only after the user says the verification is complete. Never attempt to solve, bypass, guess, replay, or repeatedly submit a verification challenge.

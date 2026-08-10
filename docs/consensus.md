@@ -35,7 +35,7 @@ Skill 是规则层，Adapter 是执行层；新增平台应尽量只新增对应
 
 ## 登录和凭证
 
-优先使用 API Token、OAuth 或本地浏览器会话。未登录或登录过期时，必须直接进入该平台的登录页并保留为接力页面，等待用户完成登录后从同一页面继续；不得停在平台首页或要求用户提供 Cookie。账号密码仅允许从本机 `.env` 读取，不进入日志、文章或 Git 仓库；验证码和二次认证由用户手动完成。
+优先使用 API Token、OAuth 或本地浏览器会话。未登录或登录过期时，必须直接进入该平台的登录页并保留为接力页面，等待用户完成登录后从同一页面继续；不得停在平台首页或要求用户提供 Cookie。账号密码仅允许从本机 `.env` 读取，不进入日志、文章或 Git 仓库。遇到验证码、人机检测或二次认证时，必须立即停止受阻操作，保留当前浏览器页面、已填写字段和已上传素材，交由用户完成验证后从同一页面恢复；不得尝试绕过、猜测或重复提交验证。
 
 ## 本地 Git 发布
 
@@ -56,6 +56,10 @@ CSDN 已完成第一轮浏览器流程验证：首次点击“保存草稿”才
 ## 博客园 Discovery
 
 博客园已完成浏览器发布验证。已登录会话从首页“写随笔”进入 Markdown 编辑器；正文图片必须经过两步操作：先点击“自动备份”下方的“上传图片”打开“插入图片”面板，再点击面板中的“上传图片”选择本地文件。平台将图片回写为 `img2024.cnblogs.com` 托管 URL，最终公开页也已验证图片渲染。AI 生成内容必须勾选平台声明；发布成功后编辑 URL 暴露 `postId`，并使用“立即查看”链接验证公开文章。详细记录见 [博客园 Browser Discovery](platforms/cnblogs-discovery.md)，平台规则见 [博客园 Skill](../skills/platforms/cnblogs/SKILL.md)。
+
+## SegmentFault Discovery
+
+SegmentFault 已完成浏览器发布验证。已登录会话从首页“撰写”进入 CodeMirror Markdown 编辑器；正文图片通过 `.icon-image` 打开“添加图片”，本地上传后写入相对 Markdown 地址 `/img/<image-id>`，公开页解析为 `https://segmentfault.com/img/<image-id>` 并已确认渲染。平台最多五个标签，未观察到独立分类或摘要字段；成功发布直接跳转至 `https://segmentfault.com/a/<article-id>`。详细记录见 [SegmentFault Browser Discovery](platforms/segmentfault-discovery.md)，平台规则见 [SegmentFault Skill](../skills/platforms/segmentfault/SKILL.md)。
 
 ## 当前非目标
 
