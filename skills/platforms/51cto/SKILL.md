@@ -22,14 +22,15 @@ Do not publish before this check. A sign-in result is operational metadata only 
 6. Upload local images through the editor or cover uploader, wait for the hosted image to render, then wait for another automatic save.
 7. Open **发布文章** and set all required publication fields.
 8. Present the final reader-facing article and selected settings for explicit per-article approval.
-9. Click the final **发布** button only after approval; then capture the result URL and status.
+9. In a newly created editor, click the final **发布** button only after approval; then capture the result URL and status. Do not treat a draft editor's **确认** button as successful publication.
 
 ## Confirmed Behavior
 
 - A fresh editor does not expose `blog_id` or `work_id` in its URL or page fields.
 - Entering content creates an automatic draft: the editor displays `已保存 <time>` and the draft count increases.
 - Markdown pasted into the rich-text editor triggers a conversion dialog. Confirming the dialog creates headings, a separator, emphasis, and hyperlinks correctly.
-- The public ID and final URL have not yet been observed. Do not infer them from a draft count, title, or client-side hidden field.
+- A successful new-article submission redirects to `https://blog.51cto.com/blogger/success/<article-id>` and displays `发布成功`.
+- Verify the reader-facing URL by loading `https://blog.51cto.com/wangshiyu/<article-id>` and checking the returned page title. Do not infer publication from a draft count, title, or client-side hidden field.
 
 ## Publish Configuration
 
@@ -45,7 +46,7 @@ Observed fields and defaults:
 - Visibility: public or private. The observed default is public.
 - Optional pinning under advanced options.
 
-For the submitted article, configured values are: categories `AI 智能体` / `编程 Agent`; tags `人工智能`, `AI Agent`, `云原生`, `软件开发`, `大模型应用`; original; public; automatic cover; summary `聚焦 AI Agent、云原生协同与数据治理的每日科技观察。`.
+The validated submission used categories `AI 智能体` / `编程 Agent`; tags `人工智能`, `AI Agent`, `云原生`, `软件开发`, `大模型应用`; original; public; automatic cover; and a normalized summary.
 
 ## Images And Interface Trace
 

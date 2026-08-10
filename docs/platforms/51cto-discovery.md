@@ -56,6 +56,6 @@ The follow-up should use a browser flow that supports the visible file chooser, 
 
 ## Submission Result
 
-The user approved final publication. The configured draft `2071719` was submitted on 2026-08-10: the draft count dropped from 5 to 4 and 51CTO opened a fresh blank editor, which is the observed post-submit transition.
+An earlier attempt using draft `2071719` did not publish. The draft remains in the draft inbox; a draft-editor **确认** button is not sufficient evidence of submission.
 
-At the time of verification, the article was not yet displayed in the author profile or the visible article-management list, so 51CTO had not exposed a public article ID or URL. Record this result as `submitted` / `under_review`, not `published`; a later check must obtain the returned URL from the post-review list rather than inferring it from the draft ID.
+The fresh article `今日科技观察：AI 智能体如何重塑软件研发协作` was successfully submitted from a new editor. 51CTO redirected to `https://blog.51cto.com/blogger/success/14838140`, displayed `发布成功`, and the reader-facing article URL was verified as `https://blog.51cto.com/wangshiyu/14838140`.
