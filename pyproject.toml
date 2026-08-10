@@ -6,8 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "openpublisher"
 version = "0.1.0"
 description = "AI-native content publishing infrastructure"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-

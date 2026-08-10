@@ -1,29 +1,29 @@
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import List, Optional
 
 
 @dataclass
 class ArticleMetadata:
     title: str
-    summary: str | None = None
-    tags: list[str] = field(default_factory=list)
-    category: str | None = None
-    cover_image: Path | None = None
-    seo_title: str | None = None
-    seo_description: str | None = None
+    summary: Optional[str] = None
+    tags: List[str] = field(default_factory=list)
+    category: Optional[str] = None
+    cover_image: Optional[Path] = None
+    seo_title: Optional[str] = None
+    seo_description: Optional[str] = None
 
 
 @dataclass
 class ImageAsset:
     source: Path
-    alt: str | None = None
-    published_url: str | None = None
+    alt: Optional[str] = None
+    published_url: Optional[str] = None
 
 
 @dataclass
 class Article:
     metadata: ArticleMetadata
     body_markdown: str
-    source_path: Path | None = None
-    images: list[ImageAsset] = field(default_factory=list)
-
+    source_path: Optional[Path] = None
+    images: List[ImageAsset] = field(default_factory=list)

@@ -1,5 +1,7 @@
 # Local Git Repository Publisher
 
+This Skill is governed by [Mandatory Publishing Rules](../../PUBLISHING_RULES.md). Generated articles, front matter, image alt text, and commit-visible content must not expose internal system names or operational details.
+
 ## Purpose
 
 Publish a normalized article into a local Git-backed content repository.
@@ -27,4 +29,5 @@ Publish a normalized article into a local Git-backed content repository.
 - Never commit `.env`, tokens, cookies or passwords.
 - Support write-only, commit-only and commit-and-push modes.
 - Stop and report conflicts instead of force-pushing.
-
+- Run mandatory reader-facing content validation before writing files, committing, or pushing. No Git workflow can bypass it.
+- Preserve the mandatory author footer in the rendered article before writing any repository file.

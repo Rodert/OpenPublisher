@@ -1,8 +1,9 @@
 from dataclasses import dataclass
-from enum import StrEnum
+from enum import Enum
+from typing import Dict, Optional
 
 
-class PublicationStatus(StrEnum):
+class PublicationStatus(str, Enum):
     PUBLISHED = "published"
     SKIPPED = "skipped"
     FAILED = "failed"
@@ -13,8 +14,7 @@ class PublicationStatus(StrEnum):
 class PublicationResult:
     platform: str
     status: PublicationStatus
-    url: str | None = None
-    external_id: str | None = None
-    error: str | None = None
-    details: dict[str, str] | None = None
-
+    url: Optional[str] = None
+    external_id: Optional[str] = None
+    error: Optional[str] = None
+    details: Optional[Dict[str, str]] = None
