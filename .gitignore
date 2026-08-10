@@ -141,6 +141,3 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
-
-# Local, user-provided publishing test assets
-/tests/assets/
