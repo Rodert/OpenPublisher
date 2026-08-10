@@ -36,3 +36,7 @@ Every platform test-publish workflow must complete a real image upload before fi
 4. Record the sanitized hosted URL in the publication result.
 
 An automatic cover option does not satisfy this rule unless the uploaded image is already present in the article. A platform Skill may require additional image or cover checks, but may never omit this test-run requirement.
+
+## Login Handoff
+
+When a platform requires authentication, open that platform's actual login page and retain it as a browser handoff. Resume the same platform workflow only after the user completes login. Do not stop at a homepage, request browser cookies, or expose credentials in chat, logs, articles, or Git.
