@@ -45,6 +45,10 @@ Skill 是规则层，Adapter 是执行层；新增平台应尽量只新增对应
 
 CSDN 已完成第一轮浏览器流程验证：首次点击“保存草稿”才生成 `articleId`，并将其写入编辑器 URL。后续保存、发布和重试必须持久化并复用这个 ID，避免因重新打开编辑器而创建重复草稿。详细记录见 [CSDN Browser Discovery](platforms/csdn-discovery.md)，平台规则见 [CSDN Skill](../skills/platforms/csdn/SKILL.md)。
 
+## 51CTO Discovery
+
+51CTO 已完成第一轮浏览器流程验证。每次发布必须先访问签到页；本次账号已显示“今日已签到”。编辑器自动保存草稿，但在已观察的 URL 和页面字段中没有暴露可复用文章 ID。平台支持把粘贴的 Markdown 转换成富文本，并提供分类、最多五个标签、摘要、话题、封面、版权、可见性和置顶配置。详细记录见 [51CTO Browser Discovery](platforms/51cto-discovery.md)，平台规则见 [51CTO Skill](../skills/platforms/51cto/SKILL.md)。
+
 ## 当前非目标
 
 暂不实现真实平台 API、浏览器自动登录、复杂前端、定时任务和多用户权限。这些将在核心流程跑通后逐项增加。
