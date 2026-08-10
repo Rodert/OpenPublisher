@@ -24,7 +24,7 @@ At minimum, the following text is prohibited in titles, summaries, bodies, image
 
 ## Mandatory Author Footer
 
-Every published article must end with the configured author profile. The publishing pipeline appends it before centralized validation; platform-specific transformations must preserve it and must not duplicate it.
+Every published article must end with the exact configured author footer: `我是王仕宇 JavaPub`. The publishing pipeline appends it before centralized validation; platform-specific transformations must preserve it and must not duplicate or rewrite it.
 
 ## Mandatory Image Upload In Test Runs
 
