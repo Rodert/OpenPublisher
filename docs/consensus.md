@@ -53,6 +53,10 @@ CSDN 已完成第一轮浏览器流程验证：首次点击“保存草稿”才
 
 51CTO 已完成浏览器流程验证。每次发布必须先访问签到页；本次账号已显示“今日已签到”。从签到页点击“写文章”后进入 Markdown 编辑器，编辑器自动保存草稿，但在已观察的 URL 和页面字段中没有暴露可复用文章 ID。已验证正文工具栏的“上传图片”可将本地图片转为 51CTO 托管 URL 并在编辑器中渲染；发布需要双级分类、最多五个标签、摘要、话题、封面、版权、可见性和置顶配置。详细记录见 [51CTO Browser Discovery](platforms/51cto-discovery.md)，平台规则见 [51CTO Skill](../skills/platforms/51cto/SKILL.md)。
 
+## 博客园 Discovery
+
+博客园已完成浏览器发布验证。已登录会话从首页“写随笔”进入 Markdown 编辑器；正文图片必须经过两步操作：先点击“自动备份”下方的“上传图片”打开“插入图片”面板，再点击面板中的“上传图片”选择本地文件。平台将图片回写为 `img2024.cnblogs.com` 托管 URL，最终公开页也已验证图片渲染。AI 生成内容必须勾选平台声明；发布成功后编辑 URL 暴露 `postId`，并使用“立即查看”链接验证公开文章。详细记录见 [博客园 Browser Discovery](platforms/cnblogs-discovery.md)，平台规则见 [博客园 Skill](../skills/platforms/cnblogs/SKILL.md)。
+
 ## 当前非目标
 
 暂不实现真实平台 API、浏览器自动登录、复杂前端、定时任务和多用户权限。这些将在核心流程跑通后逐项增加。
