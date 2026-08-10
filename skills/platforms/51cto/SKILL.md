@@ -15,9 +15,9 @@ Do not publish before this check. A sign-in result is operational metadata only 
 ## Article Lifecycle
 
 1. Complete the daily sign-in check.
-2. Open `https://blog.51cto.com/blogger/publish?old=1&newBloger=2`.
+2. Click the visible **写文章** entry and use the Markdown editor at `https://blog.51cto.com/blogger/publish`. Do not switch to the legacy `?old=1` editor and do not use Markdown import as an image-upload substitute.
 3. Validate the normalized article, including the mandatory author footer and reader-facing content boundary.
-4. Fill the title and body. When 51CTO detects pasted Markdown, choose **确认** to convert it to rich text.
+4. Fill the title and body in Markdown.
 5. Wait for the editor to show an automatic-save timestamp. Treat this as a saved draft even when the URL and hidden fields do not expose a public article ID.
 6. Upload at least one approved local image through the editor, wait for its hosted URL and rendered image, then wait for another automatic save. This is mandatory for every 51CTO test-publish run; automatic cover selection alone is insufficient.
 7. Open **发布文章** and set all required publication fields.
@@ -26,9 +26,9 @@ Do not publish before this check. A sign-in result is operational metadata only 
 
 ## Confirmed Behavior
 
-- A fresh editor does not expose `blog_id` or `work_id` in its URL or page fields.
+- A fresh Markdown editor does not expose `blog_id` or `work_id` in its URL or page fields.
 - Entering content creates an automatic draft: the editor displays `已保存 <time>` and the draft count increases.
-- Markdown pasted into the rich-text editor triggers a conversion dialog. Confirming the dialog creates headings, a separator, emphasis, and hyperlinks correctly.
+- The Markdown editor's body-image control is `.editorphoto1`. Opening it reveals two actions: **上传图片** (local upload) and **添加图片链接**. Use **上传图片** for the mandatory local-image workflow.
 - A successful new-article submission redirects to `https://blog.51cto.com/blogger/success/<article-id>` and displays `发布成功`.
 - Verify the reader-facing URL by loading `https://blog.51cto.com/wangshiyu/<article-id>` and checking the returned page title. Do not infer publication from a draft count, title, or client-side hidden field.
 
@@ -36,8 +36,8 @@ Do not publish before this check. A sign-in result is operational metadata only 
 
 Observed fields and defaults:
 
-- A required two-level platform category. Select both levels before final confirmation. For the validated article, `AI 智能体` and `编程 Agent` were selected.
-- Up to five tags. The platform may prefill suggested tags; replace them with the normalized set rather than exceeding the limit.
+- A required two-level platform category. Select both levels before final confirmation. The current validated flow used `人工智能` / `深度学习`.
+- Up to five tags. The platform may prefill suggested tags; make sure the final visible set contains exactly five relevant tags rather than exceeding the limit.
 - Article summary, maximum 500 characters.
 - Optional topic and personal category.
 - Cover mode: single image, three images, no image, or automatic extraction from article images. The observed default is automatic extraction.
@@ -46,11 +46,17 @@ Observed fields and defaults:
 - Visibility: public or private. The observed default is public.
 - Optional pinning under advanced options.
 
-The validated submission used categories `AI 智能体` / `编程 Agent`; tags `人工智能`, `AI Agent`, `云原生`, `软件开发`, `大模型应用`; original; public; automatic cover; and a normalized summary.
+The validated submission used categories `人工智能` / `深度学习`; five relevant tags; original; public; automatic cover; and a normalized summary.
 
 ## Images And Interface Trace
 
-The editor exposes a single-file upload input and the publish panel exposes a cover-image uploader. The browser-control surface used in this discovery can inspect the controls but does not provide a file-selection operation or raw network interception. Therefore no upload endpoint, request schema, hosted image URL, or final publish endpoint is currently confirmed.
+The Markdown editor exposes its body-image local upload in the first dropdown item under `.editorphoto1`, using `.op-image input[type=file]`. Click the visible **上传图片** dropdown item, wait for the file chooser, select the approved local image, then wait for the editor to insert Markdown in this form:
+
+```markdown
+![filename](https://s2.51cto.com/...)
+```
+
+Verify both the non-local hosted URL and its rendered image before publishing. The publish panel also exposes cover-image controls, but cover selection never replaces the required body-image upload. Browser-visible validation confirms the hosted result; do not claim a raw upload endpoint unless it has separately been observed and sanitized.
 
 For a future observed upload, record only sanitized fields:
 

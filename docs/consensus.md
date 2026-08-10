@@ -51,7 +51,7 @@ CSDN 已完成第一轮浏览器流程验证：首次点击“保存草稿”才
 
 ## 51CTO Discovery
 
-51CTO 已完成第一轮浏览器流程验证。每次发布必须先访问签到页；本次账号已显示“今日已签到”。编辑器自动保存草稿，但在已观察的 URL 和页面字段中没有暴露可复用文章 ID。平台支持把粘贴的 Markdown 转换成富文本，并提供分类、最多五个标签、摘要、话题、封面、版权、可见性和置顶配置。详细记录见 [51CTO Browser Discovery](platforms/51cto-discovery.md)，平台规则见 [51CTO Skill](../skills/platforms/51cto/SKILL.md)。
+51CTO 已完成浏览器流程验证。每次发布必须先访问签到页；本次账号已显示“今日已签到”。从签到页点击“写文章”后进入 Markdown 编辑器，编辑器自动保存草稿，但在已观察的 URL 和页面字段中没有暴露可复用文章 ID。已验证正文工具栏的“上传图片”可将本地图片转为 51CTO 托管 URL 并在编辑器中渲染；发布需要双级分类、最多五个标签、摘要、话题、封面、版权、可见性和置顶配置。详细记录见 [51CTO Browser Discovery](platforms/51cto-discovery.md)，平台规则见 [51CTO Skill](../skills/platforms/51cto/SKILL.md)。
 
 ## 当前非目标
 
