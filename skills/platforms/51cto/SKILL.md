@@ -35,7 +35,7 @@ Do not publish before this check. A sign-in result is operational metadata only 
 
 Observed fields and defaults:
 
-- One required platform category. For the validated AI article, `人工智能` was selected.
+- A required two-level platform category. Select both levels before final confirmation. For the validated article, `AI 智能体` and `编程 Agent` were selected.
 - Up to five tags. The platform may prefill suggested tags; replace them with the normalized set rather than exceeding the limit.
 - Article summary, maximum 500 characters.
 - Optional topic and personal category.
@@ -45,7 +45,7 @@ Observed fields and defaults:
 - Visibility: public or private. The observed default is public.
 - Optional pinning under advanced options.
 
-For the current draft, configured values are: category `人工智能`; tags `人工智能`, `AI Agent`, `云原生`, `软件开发`, `大模型应用`; original; public; automatic cover; summary `聚焦 AI Agent、云原生协同与数据治理的每日科技观察。`.
+For the submitted article, configured values are: categories `AI 智能体` / `编程 Agent`; tags `人工智能`, `AI Agent`, `云原生`, `软件开发`, `大模型应用`; original; public; automatic cover; summary `聚焦 AI Agent、云原生协同与数据治理的每日科技观察。`.
 
 ## Images And Interface Trace
 

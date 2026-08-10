@@ -35,7 +35,7 @@ Selecting **确认** converted headings, the horizontal separator, strong text, 
 
 Visible configuration included:
 
-- required article category;
+- required first-level and second-level article categories;
 - personal category;
 - a maximum of five tags;
 - summary (up to 500 characters);
@@ -46,7 +46,7 @@ Visible configuration included:
 - public/private visibility;
 - optional pinning.
 
-The draft is currently left in the publication configuration view and has not been publicly submitted. Its selected settings are category `人工智能`, five relevant tags, original type, public visibility, automatic cover, and the configured summary.
+The final confirmation requires both category levels. During submission, `AI 智能体` / `编程 Agent` was selected, along with five relevant tags, original type, public visibility, automatic cover, and the configured summary.
 
 ## Images And Requests
 
@@ -54,6 +54,8 @@ Both editor and cover image upload controls are present. The current browser-con
 
 The follow-up should use a browser flow that supports the visible file chooser, then capture a sanitized event record: destination, request method and URL if available, response key names, returned image URL, and the subsequent draft save. Credentials, request headers, CSRF values, and complete payloads must remain excluded.
 
-## Final Publish Boundary
+## Submission Result
 
-The final **发布** button is visible but was not clicked. Public submission requires the user's explicit per-article confirmation, even after every field is configured.
+The user approved final publication. The configured draft `2071719` was submitted on 2026-08-10: the draft count dropped from 5 to 4 and 51CTO opened a fresh blank editor, which is the observed post-submit transition.
+
+At the time of verification, the article was not yet displayed in the author profile or the visible article-management list, so 51CTO had not exposed a public article ID or URL. Record this result as `submitted` / `under_review`, not `published`; a later check must obtain the returned URL from the post-review list rather than inferring it from the draft ID.
